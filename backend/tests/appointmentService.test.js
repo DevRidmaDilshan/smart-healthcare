@@ -14,12 +14,12 @@ describe('Appointment Service', () => {
             const mockSlots = [
                 {
                     slot_id: 'SLOT001',
-                    slot_date: '2024-01-15',
+                    slot_date: '2025-10-15',
                     start_time: '09:00:00',
                     end_time: '09:30:00',
                     staff_id: 'DOC001',
-                    first_name: 'John',
-                    last_name: 'Doe',
+                    first_name: 'Ridma',
+                    last_name: 'Dilshan',
                     specialization: 'Cardiology',
                     hospital_name: 'Central Hospital',
                     department_name: 'Cardiology'
@@ -31,13 +31,13 @@ describe('Appointment Service', () => {
             const result = await appointmentService.searchAvailability(
                 'HOSP001',
                 'DEPT001',
-                '2024-01-15'
+                '2025-10-15'
             );
 
             expect(result).toEqual(mockSlots);
             expect(pool.execute).toHaveBeenCalledWith(
                 expect.stringContaining('SELECT'),
-                ['2024-01-15', 'HOSP001', 'DEPT001']
+                ['2025-10-15', 'HOSP001', 'DEPT001']
             );
         });
 
@@ -45,7 +45,7 @@ describe('Appointment Service', () => {
             pool.execute.mockRejectedValueOnce(new Error('Database connection failed'));
 
             await expect(
-                appointmentService.searchAvailability('HOSP001', 'DEPT001', '2024-01-15')
+                appointmentService.searchAvailability('HOSP001', 'DEPT001', '2025-01-15')
             ).rejects.toThrow('Database connection failed');
         });
     });
@@ -58,7 +58,7 @@ describe('Appointment Service', () => {
                 departmentId: 'DEPT001',
                 staffId: 'DOC001',
                 slotId: 'SLOT001',
-                date: '2024-01-15',
+                date: '2025-10-15',
                 time: '09:00:00',
                 reason: 'Regular checkup'
             };

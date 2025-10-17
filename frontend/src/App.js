@@ -6,9 +6,9 @@ function App() {
   const [currentView, setCurrentView] = useState('dashboard');
   const [patientData] = useState({
     patientId: 'PAT001',
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    phoneNumber: '+94123456789'
+    name: 'Ridma Dilshan',
+    email: 'ridmadilshan.com',
+    phoneNumber: '0716319485'
   });
   
   const [appointments, setAppointments] = useState([]);
@@ -54,7 +54,7 @@ function App() {
         const mockAppointments = [
           {
             appointmentId: 'APT001',
-            appointmentDate: '2024-02-15',
+            appointmentDate: '2025-02-15',
             appointmentTime: '10:00',
             status: 'CONFIRMED',
             hospitalName: 'Colombo National Hospital',
@@ -64,7 +64,7 @@ function App() {
           },
           {
             appointmentId: 'APT002',
-            appointmentDate: '2024-02-20',
+            appointmentDate: '2025-02-20',
             appointmentTime: '14:30',
             status: 'PENDING',
             hospitalName: 'Nawaloka Hospital',
@@ -177,7 +177,7 @@ function App() {
   const Footer = () => {
     return (
       <footer className="footer">
-        <p>&copy; 2024 Smart Healthcare System. All rights reserved.</p>
+        <p>&copy; 2025 Smart Healthcare System. All rights reserved.</p>
         <p>SE3070 - Case Study Assignment 02</p>
       </footer>
     );
